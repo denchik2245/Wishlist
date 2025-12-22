@@ -1,0 +1,30 @@
+.emptyBox {
+  width: 100%;
+  height: 710px;
+  background: var(--color-white);
+  border-radius: var(--radius-l);
+
+  margin-top: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.emptyCenter {
+  text-align: center;
+}
+
+.emptyTitle {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.emptySubtitle {
+  margin-top: 12px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--color-text-secondary);
+}

@@ -1,0 +1,240 @@
+.itemForm {
+  height: 100%;
+  padding: 36px;
+  font-family: var(--font-family-main);
+  color: var(--color-text-main);
+}
+
+.itemFormTitle {
+  margin: 0;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* 40px от заголовка до первого блока */
+.formSection {
+  margin-top: 40px;
+}
+
+/* 28px между всеми последующими секциями */
+.formSection + .formSection {
+  margin-top: 28px;
+}
+
+.fieldBlock {
+  margin: 0;
+}
+
+.fieldLabel {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.textInput {
+  margin-top: 12px;
+  width: 578px;
+  height: 56px;
+  padding-left: 24px;
+  padding-right: 24px;
+
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  background: transparent;
+
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-main);
+
+  outline: none;
+}
+
+.textInput::placeholder {
+  color: var(--color-text-secondary);
+}
+
+.textInputWide {
+  width: 418px;
+}
+
+.row2 {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+.row2 .fieldBlock {
+  margin-top: 0;
+}
+
+.selectWrap {
+  margin-top: 12px;
+  position: relative;
+  width: 150px;
+  height: 56px;
+}
+
+.selectInput {
+  width: 150px;
+  height: 56px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  background: transparent;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  color: transparent;
+  appearance: none;
+  outline: none;
+
+  padding-left: 24px;
+  padding-right: 40px;
+
+  cursor: pointer;
+  font-family: var(--font-family-main);
+}
+
+.selectValue {
+  position: absolute;
+  left: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-main);
+
+  pointer-events: none;
+}
+
+.selectIcon {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  color: var(--color-text-main);
+  pointer-events: none;
+}
+
+.uploadBox {
+  margin-top: 12px;
+  width: 578px;
+  height: 150px;
+
+  border-radius: var(--radius-m);
+  border: 1px dashed var(--color-border);
+  background: transparent;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  user-select: none;
+}
+
+.uploadBoxActive {
+  border-color: var(--color-green);
+}
+
+.uploadText {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-text-main);
+}
+
+.hiddenFile {
+  display: none;
+}
+
+/* Основная кнопка */
+.submitBtn {
+  width: 578px;
+  height: 56px;
+
+  border: none;
+  border-radius: var(--radius-full);
+  background: var(--color-green);
+  color: #ffffff;
+
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  font-family: var(--font-family-main);
+}
+
+.submitBtnText {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.submitBtnIcon {
+  display: inline-flex;
+  width: 18px;
+  height: 18px;
+}
+
+/* ✅ Кнопка удаления: ниже на 10px, обводка #D7D9DC */
+.deleteBtn {
+  margin-top: 10px;
+  width: 578px;
+  height: 56px;
+
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border); /* #D7D9DC */
+  background: transparent;
+
+  cursor: pointer;
+
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-text-main);
+  font-family: var(--font-family-main);
+}
+
+.selectInput option {
+  color: #333333;
+}
+
+.submitBtn:hover {
+  background: #2d9031;
+}
+
+.textInput:hover,
+.textInput:focus {
+  border-color: #333333;
+}
+
+.selectInput:hover,
+.selectInput:focus {
+  border-color: #333333;
+}
+
+.deleteBtn:hover {
+  border-color: #333333;
+  color: #333333;
+}
+
+.uploadBox {
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    transform 0.12s ease;
+}
+
+.uploadBox:hover {
+  border-color: #333333;
+}
+
+.uploadBox:active {
+  transform: translateY(0);
+}

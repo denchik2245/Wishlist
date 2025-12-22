@@ -1,0 +1,22 @@
+:root {
+  /* Colors */
+  --color-bg-page: #f5f7fa;
+  --color-text-main: #333333;
+  --color-text-secondary: #838383;
+  --color-white: #ffffff;
+  --color-green: #4bae4f;
+  --color-border: #d7d9dc;
+
+  /* Layout */
+  --container-width: 1310px;
+  --grid-columns: 12;
+  --grid-gutter: 10px;
+
+  /* Radius */
+  --radius-l: 32px;
+  --radius-m: 20px;
+  --radius-full: 100px;
+
+  /* Typography */
+  --font-family-main: "Montserrat", system-ui, sans-serif;
+}

@@ -1,0 +1,53 @@
+.headerRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* по умолчанию: 40px Bold для "Желаемые предметы" */
+.headerTitle {
+  margin: 4px 0 0 0;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-text-main);
+}
+
+/* вариант для "Раннее желаемые предметы": 32px Bold */
+.headerTitleMd {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.addBtn {
+  height: 56px;
+  width: 241px;
+  border: none;
+  border-radius: var(--radius-full);
+  background: var(--color-green);
+  color: #ffffff;
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  font-family: var(--font-family-main);
+}
+
+.addBtnText {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.addBtnIcon {
+  display: inline-flex;
+  width: 18px;
+  height: 18px;
+}
+
+.addBtn:hover {
+  background: #2d9031;
+}
