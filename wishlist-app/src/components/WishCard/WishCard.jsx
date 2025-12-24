@@ -40,23 +40,20 @@ export default function WishCard({
   return (
     <div className={`card ${isArchived ? "cardArchived" : ""}`}>
       <div className="cardTitleArea">
-        // Заголовок с подсказкой
         <div className="cardTitle" title={title}>
           {title}
         </div>
       </div>
 
-      // Изображение предмета
       <img className="cardImage" src={imgSrc} alt={title} />
 
-      // Цена предмета
       <div className="cardPrice">
         {price ? `${price} ${CURRENCY_SIGN[currency] ?? "₽"}` : "Цена не указана"}
       </div>
 
-      // Действия с предметом
       {!isArchived ? (
         <div className="cardActions">
+
           {hasLink && (
             <button
               className="linkBtn"
@@ -82,6 +79,7 @@ export default function WishCard({
           <button className="editBtn" type="button" onClick={() => onEdit?.(item)}>
             Изменить
           </button>
+
         </div>
       ) : (
         <div className="cardActionsArchived">

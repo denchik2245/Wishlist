@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import "./ItemForm.css";
 
+// Доступные валюты
 const CURRENCIES = [
   { value: "RUB", label: "RUB, ₽" },
   { value: "EUR", label: "EUR, €" },
@@ -8,19 +9,24 @@ const CURRENCIES = [
 ];
 
 export default function ItemForm({ initialItem = null, onSubmit, onDelete }) {
+
+  // Определяем, режим добавления или редактирования
   const isEdit = Boolean(initialItem?.id);
 
+  // Состояния полей формы
   const [title, setTitle] = useState("");
   const [link, setLink] = useState("");
   const [price, setPrice] = useState("");
   const [currency, setCurrency] = useState("RUB");
 
+  // Состояния для загрузки изображения
   const [imageDataUrl, setImageDataUrl] = useState("");
   const [fileName, setFileName] = useState("");
 
   const fileInputRef = useRef(null);
 
   useEffect(() => {
+    // Если initialItem нет, сбрасываем поля
     if (!initialItem) {
       setTitle("");
       setLink("");
@@ -31,6 +37,7 @@ export default function ItemForm({ initialItem = null, onSubmit, onDelete }) {
       return;
     }
 
+    // Заполняем поля значениями из initialItem
     setTitle(initialItem.title ?? "");
     setLink(initialItem.link ?? "");
     setPrice(initialItem.price ?? "");
@@ -39,14 +46,17 @@ export default function ItemForm({ initialItem = null, onSubmit, onDelete }) {
     setFileName(initialItem.fileName ?? "");
   }, [initialItem]);
 
+  // Подпись валюты
   const currencyLabel = useMemo(() => {
     return CURRENCIES.find((c) => c.value === currency)?.label ?? "RUB, ₽";
   }, [currency]);
 
+  // Открываем выбор файла
   const handlePickFile = () => {
     fileInputRef.current?.click();
   };
 
+  // Обработка выбора файла
   const handleFileChange = (e) => {
     const file = e.target.files?.[0];
     if (!file) {

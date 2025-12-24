@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import "./Modal.css";
 
 export default function Modal({ isOpen, onClose, isEdit = false, children }) {
+
+  // Обработчик закрытия по Escape и блокировка скролла фона
   useEffect(() => {
     if (!isOpen) return;
 
@@ -10,6 +12,7 @@ export default function Modal({ isOpen, onClose, isEdit = false, children }) {
     };
 
     document.addEventListener("keydown", onKeyDown);
+
     document.body.style.overflow = "hidden";
 
     return () => {
@@ -22,10 +25,12 @@ export default function Modal({ isOpen, onClose, isEdit = false, children }) {
 
   return (
     <div className="modalOverlay" onMouseDown={onClose}>
+
       <div
         className={`modalWindow ${isEdit ? "modalWindowEdit" : ""}`}
         onMouseDown={(e) => e.stopPropagation()}
       >
+
         <button
           className="modalClose"
           type="button"
