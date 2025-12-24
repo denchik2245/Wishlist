@@ -159,3 +159,15 @@
   border-color: #333333;
   color: #333333;
 }
+
+.icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  color: currentColor;
+}
+
+.icon14 {
+  width: 14px;
+  height: 14px;
+}
