@@ -1,5 +1,4 @@
 .page {
-  /* Верхний отступ под шапку: кнопка должна быть 50px от верха */
   padding-top: 50px;
   padding-bottom: 80px;
 }
@@ -12,13 +11,12 @@
 .grid12 {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  column-gap: 10px; /* gutter */
+  column-gap: 10px;
 }
 
-/* Чтобы кнопка была 50px от верха, а заголовок 54px — добавим заголовку +4px */
 .pageTitle {
   margin: 4px 0 0 0;
   font-size: 40px;
-  font-weight: 700; /* Bold */
+  font-weight: 700;
   line-height: 1.2;
 }

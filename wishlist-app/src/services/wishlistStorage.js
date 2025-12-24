@@ -21,6 +21,5 @@ export function saveWishlistState(state) {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
   } catch {
-    // если localStorage переполнен/запрещён — просто молча игнорируем
   }
 }

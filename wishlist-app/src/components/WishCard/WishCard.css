@@ -42,7 +42,6 @@
   color: var(--color-text-main);
 }
 
-/* ===== Active actions ===== */
 .cardActions {
   margin-top: 12px;
   display: flex;
@@ -114,24 +113,22 @@
   font-family: var(--font-family-main);
 }
 
-/* ===== Archived style ===== */
 .cardArchived .cardTitle,
 .cardArchived .cardPrice {
-  color: var(--color-text-secondary); /* #838383 */
+  color: var(--color-text-secondary);
 }
 
-/* Archived actions (one button) */
 .cardActionsArchived {
   margin-top: 12px;
   display: flex;
 }
 
 .restoreBtn {
-  width: 264px; /* чтобы выглядело аккуратно под фото/контент */
+  width: 264px;
   height: 39px;
 
   border-radius: 999px;
-  border: 1px solid var(--color-border); /* #D7D9DC */
+  border: 1px solid var(--color-border);
   background: transparent;
   cursor: pointer;
 

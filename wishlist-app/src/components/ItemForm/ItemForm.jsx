@@ -22,7 +22,6 @@ export default function ItemForm({ initialItem = null, onSubmit, onDelete }) {
 
   useEffect(() => {
     if (!initialItem) {
-      // add mode -> очистка
       setTitle("");
       setLink("");
       setPrice("");
@@ -97,7 +96,6 @@ export default function ItemForm({ initialItem = null, onSubmit, onDelete }) {
         {isEdit ? "Изменить предмет" : "Добавить предмет"}
       </h2>
 
-      {/* Название */}
       <div className="formSection">
         <div className="fieldBlock">
           <div className="fieldLabel">Название предмета</div>
@@ -111,7 +109,6 @@ export default function ItemForm({ initialItem = null, onSubmit, onDelete }) {
         </div>
       </div>
 
-      {/* Ссылка */}
       <div className="formSection">
         <div className="fieldBlock">
           <div className="fieldLabel">Ссылка на предмет</div>
@@ -125,7 +122,6 @@ export default function ItemForm({ initialItem = null, onSubmit, onDelete }) {
         </div>
       </div>
 
-      {/* Цена + Валюта */}
       <div className="formSection">
         <div className="row2">
           <div className="fieldBlock">
@@ -178,7 +174,6 @@ export default function ItemForm({ initialItem = null, onSubmit, onDelete }) {
         </div>
       </div>
 
-      {/* Фото */}
       <div className="formSection">
         <div className="fieldBlock">
           <div className="fieldLabel">Фото предмета</div>
@@ -207,7 +202,6 @@ export default function ItemForm({ initialItem = null, onSubmit, onDelete }) {
         </div>
       </div>
 
-      {/* Кнопки */}
       <div className="formSection">
         <button className="submitBtn" type="submit">
           <span className="submitBtnText">{isEdit ? "Сохранить" : "Добавить"}</span>

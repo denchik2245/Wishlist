@@ -1,6 +1,6 @@
 import "./WishCard.css";
 
-const PLACEHOLDER_SRC = "/placeholder.png";
+import PLACEHOLDER_SRC from "../../assets/image/placeholder.png";
 
 const CURRENCY_SIGN = {
   RUB: "₽",
@@ -10,7 +10,7 @@ const CURRENCY_SIGN = {
 
 export default function WishCard({
   item,
-  mode = "active", // "active" | "archived"
+  mode = "active",
   onBought,
   onEdit,
   onRestore,

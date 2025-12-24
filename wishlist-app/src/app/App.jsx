@@ -76,7 +76,6 @@ export default function App() {
     closeModal();
   };
 
-  // Куплено -> переносим в архив
   const handleBought = (item) => {
     setWishlist((prev) => prev.filter((it) => it.id !== item.id));
     setArchived((prev) => {
@@ -86,7 +85,6 @@ export default function App() {
     });
   };
 
-  // Вернуть в вишлист
   const handleRestore = (item) => {
     setArchived((prev) => prev.filter((it) => it.id !== item.id));
     setWishlist((prev) => {
@@ -99,7 +97,6 @@ export default function App() {
   return (
     <div className="page">
       <div className="container">
-        {/* Желаемые */}
         <Header title="Желаемые предметы" onAdd={openAddModal} showAdd />
 
         {wishlist.length > 0 ? (
@@ -115,7 +112,6 @@ export default function App() {
           !hasAnyItems ? <EmptyState /> : <div style={{ marginTop: 53 }} />
         )}
 
-        {/* Раннее желаемые */}
         {archived.length > 0 && (
           <div style={{ marginTop: 100 }}>
             <Header title="Раннее желаемые предметы" showAdd={false} size="md" />

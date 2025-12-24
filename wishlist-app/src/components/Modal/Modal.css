@@ -11,19 +11,17 @@
 
 .modalWindow {
   width: 650px;
-  height: 760px; /* default: добавление */
+  height: 760px;
   background: var(--color-white);
   border-radius: var(--radius-l);
   position: relative;
   overflow: hidden;
 }
 
-/* ✅ режим редактирования */
 .modalWindowEdit {
   height: 826px;
 }
 
-/* крестик */
 .modalClose {
   position: absolute;
   top: 20px;

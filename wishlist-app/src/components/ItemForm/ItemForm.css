@@ -13,12 +13,10 @@
   line-height: 1.2;
 }
 
-/* 40px от заголовка до первого блока */
 .formSection {
   margin-top: 40px;
 }
 
-/* 28px между всеми последующими секциями */
 .formSection + .formSection {
   margin-top: 28px;
 }
@@ -151,7 +149,6 @@
   display: none;
 }
 
-/* Основная кнопка */
 .submitBtn {
   width: 578px;
   height: 56px;
@@ -183,14 +180,13 @@
   height: 18px;
 }
 
-/* ✅ Кнопка удаления: ниже на 10px, обводка #D7D9DC */
 .deleteBtn {
   margin-top: 10px;
   width: 578px;
   height: 56px;
 
   border-radius: var(--radius-full);
-  border: 1px solid var(--color-border); /* #D7D9DC */
+  border: 1px solid var(--color-border);
   background: transparent;
 
   cursor: pointer;

@@ -4,7 +4,6 @@
   justify-content: space-between;
 }
 
-/* по умолчанию: 40px Bold для "Желаемые предметы" */
 .headerTitle {
   margin: 4px 0 0 0;
   font-size: 40px;
@@ -13,7 +12,6 @@
   color: var(--color-text-main);
 }
 
-/* вариант для "Раннее желаемые предметы": 32px Bold */
 .headerTitleMd {
   font-size: 32px;
   font-weight: 700;
