@@ -7,24 +7,34 @@ import ItemForm from "../components/ItemForm/ItemForm";
 import { loadWishlistState, saveWishlistState } from "../services/wishlistStorage";
 import "./App.css";
 
+//Генератор уникального id для новых предметов
 function makeId() {
   return `${Date.now()}_${Math.random().toString(16).slice(2)}`;
 }
 
 export default function App() {
   const initial = useMemo(() => loadWishlistState(), []);
+
+  //wishlist — Хочу купить
+  //archived — Раньше хотел
   const [wishlist, setWishlist] = useState(initial.wishlist);
   const [archived, setArchived] = useState(initial.archived);
 
+  //Модалка для добавления и редактирования
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  //Хранит предмет, который редактируем
   const [editingItem, setEditingItem] = useState(null);
 
+  // Сохраняем состояние в localStorage при изменении wishlist или archived
   useEffect(() => {
     saveWishlistState({ wishlist, archived });
   }, [wishlist, archived]);
 
+  // Проверка, есть ли вообще предметы в списке, нужен для отображения пустого состояния
   const hasAnyItems = wishlist.length > 0 || archived.length > 0;
 
+  //Открыть/закрыть модалку для добавления/редактирования предметов
   const openAddModal = () => {
     setEditingItem(null);
     setIsModalOpen(true);
@@ -40,12 +50,16 @@ export default function App() {
     setEditingItem(null);
   };
 
+  // Обработчики для формы
   const handleSubmitForm = (payload) => {
+
+    // Название предмета обязательно
     if (!payload.title) {
       alert("Введите название предмета");
       return;
     }
 
+    // Если есть id, значит редактируем существующий предмет
     if (payload.id) {
       setWishlist((prev) =>
         prev.map((it) => (it.id === payload.id ? { ...it, ...payload } : it))
@@ -54,6 +68,7 @@ export default function App() {
         prev.map((it) => (it.id === payload.id ? { ...it, ...payload } : it))
       );
     } else {
+      // Иначе создаём новый предмет
       const newItem = {
         id: makeId(),
         title: payload.title,
@@ -64,18 +79,22 @@ export default function App() {
         fileName: payload.fileName,
         createdAt: Date.now(),
       };
+
+      // Добавляем новый предмет в начало списка
       setWishlist((prev) => [newItem, ...prev]);
     }
 
     closeModal();
   };
 
+  // Удаление предмета
   const handleDeleteItem = (id) => {
     setWishlist((prev) => prev.filter((it) => it.id !== id));
     setArchived((prev) => prev.filter((it) => it.id !== id));
     closeModal();
   };
 
+  // Переносим item из wishlist в archived
   const handleBought = (item) => {
     setWishlist((prev) => prev.filter((it) => it.id !== item.id));
     setArchived((prev) => {
@@ -85,6 +104,7 @@ export default function App() {
     });
   };
 
+  // Восстанавливаем item из archived в wishlist
   const handleRestore = (item) => {
     setArchived((prev) => prev.filter((it) => it.id !== item.id));
     setWishlist((prev) => {
