@@ -11,6 +11,7 @@ const CURRENCY_SIGN = {
   USD: "$",
 };
 
+// Компонент карточки предмета в вишлисте
 export default function WishCard({
   item,
   mode = "active",
@@ -20,31 +21,40 @@ export default function WishCard({
 }) {
   const { title, price, currency, link, imageDataUrl } = item;
 
+  // Проверяем, есть ли ссылка
   const hasLink = Boolean(link && link.trim());
+
+  // Определяем источник изображения
   const imgSrc =
     imageDataUrl && imageDataUrl.trim() ? imageDataUrl : PLACEHOLDER_SRC;
 
+  // Открытие ссылки в новом окне
   const handleOpenLink = () => {
     if (!hasLink) return;
     window.open(link, "_blank", "noopener,noreferrer");
   };
 
+  // Проверяем, в архиве ли предмет
   const isArchived = mode === "archived";
 
   return (
     <div className={`card ${isArchived ? "cardArchived" : ""}`}>
       <div className="cardTitleArea">
+        // Заголовок с подсказкой
         <div className="cardTitle" title={title}>
           {title}
         </div>
       </div>
 
+      // Изображение предмета
       <img className="cardImage" src={imgSrc} alt={title} />
 
+      // Цена предмета
       <div className="cardPrice">
         {price ? `${price} ${CURRENCY_SIGN[currency] ?? "₽"}` : "Цена не указана"}
       </div>
 
+      // Действия с предметом
       {!isArchived ? (
         <div className="cardActions">
           {hasLink && (

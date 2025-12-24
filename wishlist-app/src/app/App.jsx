@@ -15,15 +15,9 @@ function makeId() {
 export default function App() {
   const initial = useMemo(() => loadWishlistState(), []);
 
-  //wishlist — Хочу купить
-  //archived — Раньше хотел
   const [wishlist, setWishlist] = useState(initial.wishlist);
   const [archived, setArchived] = useState(initial.archived);
-
-  //Модалка для добавления и редактирования
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  //Хранит предмет, который редактируем
   const [editingItem, setEditingItem] = useState(null);
 
   // Сохраняем состояние в localStorage при изменении wishlist или archived
